@@ -16,8 +16,6 @@ const BeverageSelector = () => {
     { icon:  <img src={CoffeeIcon} class="h-10 w-45" alt="Coffee" />, label: 'Coffee', onClick: () => handleSelect('Coffee') },
     { icon:  <img src={TeaIcon} class="h-10 w-45" alt="Tea" />, label: 'Tea', onClick: () => handleSelect('Tea') },
     { icon:  <img src={WaterIcon} class="h-10 w-45" alt="Water" />, label: 'Water', onClick: () => handleSelect('Water') },
-    { icon:  <img src={AddIcon} class="h-10 w-45" alt="Add" />, label: 'Add', onClick: () => handleSelect('Add') }
-    // Add more beverages as needed
   ];
 
   const handleSelect = (beverage) => {
