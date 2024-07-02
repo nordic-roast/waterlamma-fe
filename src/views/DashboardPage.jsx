@@ -41,8 +41,8 @@ const DashboardView = () => {
           </div>
           <div className="bg-gray-200 p-4 flex justify-around">
             <button onClick={() => setActiveTab('add-sip')} className={`text-xs ${activeTab === 'add-sip' ? 'font-bold' : ''}`}>Hydrate</button>
-            <button onClick={() => setActiveTab('challenges')} className={`text-xs ${activeTab === 'challenges' ? 'font-bold' : ''}`}>Challenges</button>
-            <button onClick={() => setActiveTab('settings')} className={`text-xs ${activeTab === 'settings' ? 'font-bold' : ''}`}>Profile</button>
+            <button onClick={() => setActiveTab('challenges')} className={`text-xs ${activeTab === 'challenges' ? 'font-bold' : ''}`}>Streaks</button>
+            {/* <button onClick={() => setActiveTab('settings')} className={`text-xs ${activeTab === 'settings' ? 'font-bold' : ''}`}>Profile</button> */}
           </div>
         </div>
       </div>
