@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import llamaImage from '../assets/llama.png';
-import { ArrowLeftEndOnRectangleIcon as LoginIcon } from '@heroicons/react/24/solid'
-import BeverageSelector from '../components/BeverageSelector';
+import React, { useState } from 'react'; 
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
-import { SignedIn, SignedOut, SignInButton, UserButton, useClerk } from "@clerk/clerk-react";
+import AddSipView from './SipView';
+import ChallengesView from './ChallengesView';
+import SettingsView from './SettingsView';
 
 const DashboardView = () => {
   const [activeTab, setActiveTab] = useState('add-sip');
@@ -11,15 +11,13 @@ const DashboardView = () => {
   const renderContent = () => {
     switch (activeTab) {
       case 'add-sip':
-        return <BeverageSelector />;
+        return <AddSipView />;
       case 'challenges':
-        return <div>Challenges</div>;
+        return <ChallengesView />;
       case 'settings':
-        return <div>Settings</div>;
+        return <SettingsView />
     }
   };
-
-
 
   return (
     <div className="flex justify-start w-screen h-screen">
@@ -35,15 +33,16 @@ const DashboardView = () => {
                 <SignInButton redirectTo="/#/dashboard" />
               </SignedOut>
             </div>
-          </div> 
-          <div>
-            <img src={llamaImage} alt="Llama" className="w-64 mx-auto" />
-            {renderContent()}
+          </div>
+          <div className="w-full overflow-hidden">
+            <div className="mt-4" style={{ height: '200px', width: '400px', overflow: 'auto' }}>
+              {renderContent()}
+            </div>
           </div>
           <div className="bg-gray-200 p-4 flex justify-around">
             <button onClick={() => setActiveTab('add-sip')} className={`text-xs ${activeTab === 'add-sip' ? 'font-bold' : ''}`}>Hydrate</button>
             <button onClick={() => setActiveTab('challenges')} className={`text-xs ${activeTab === 'challenges' ? 'font-bold' : ''}`}>Challenges</button>
-            <button onClick={() => setActiveTab('settings')} className={`text-xs ${activeTab === 'settings' ? 'font-bold' : ''}`}>Settings</button>
+            <button onClick={() => setActiveTab('settings')} className={`text-xs ${activeTab === 'settings' ? 'font-bold' : ''}`}>Profile</button>
           </div>
         </div>
       </div>
@@ -52,33 +51,3 @@ const DashboardView = () => {
 };
 
 export default DashboardView;
-
-
-// <div className="flex justify-start  w-screen h-screen">
-//       <div className="w-400 h-400 overflow-auto p-4">
-//         <div className="text-center">
-//           <div className="bg-gray-800 text-white p-4 flex justify-between items-center">
-//             <div class="flex justify-end items-right">
-//               <div>
-//                 <SignedIn>
-//                   <UserButton />
-//                 </SignedIn>
-//                 <SignedOut>
-//                   <SignInButton redirectTo="/#/dashboard" />
-//                 </SignedOut>
-//               </div>
-//             </div>
-//           </div>
-//           <h1 className="text-xl font-semibold mt-4">Dashhboard</h1>
-//           <div >
-//             <img src={llamaImage} alt="Llama" className="w-64 mx-auto" />
-//             {renderContent()}
-//           </div>
-//           <div className="bg-gray-200 p-4 flex justify-around">
-//             <button onClick={() => setActiveTab('add-sip')} className={`text-xs ${activeTab === 'add-sip' ? 'font-bold' : ''}`}>Add sip</button>
-//             <button onClick={() => setActiveTab('challenges')} className={`text-xs ${activeTab === 'challenges' ? 'font-bold' : ''}`}>Challenges</button>
-//             <button onClick={() => setActiveTab('settings')} className={`text-xs ${activeTab === 'settings' ? 'font-bold' : ''}`}>Settings</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
