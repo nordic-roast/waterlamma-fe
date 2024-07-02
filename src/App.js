@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'; 
 
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'; 
+import { ClerkProvider } from '@clerk/clerk-react'; 
 import Dashboard from './views/DashboardPage'; 
 import Profile from './views/UserProfilePage'; 
 

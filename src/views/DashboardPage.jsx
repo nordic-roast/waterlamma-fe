@@ -24,7 +24,7 @@ const DashboardView = () => {
       <div className="w-400 h-400 overflow-auto p-4">
         <div className="text-center">
           <div className="bg-gray-800 text-white p-4 flex justify-between items-center">
-            <div className="flex-1"> {/* If you have other elements that need to be on the left side, put them here */} </div>
+            <div className="flex-1"></div>
             <div>
               <SignedIn>
                 <UserButton />

@@ -16,6 +16,6 @@
     "128": "icon-128.png"
   },
   "externally_connectable": {
-    "matches": ["https://YOUR_AUTH0_DOMAIN/*"]
+    "matches": ["https://bursting-moccasin-88.accounts.dev/*"]
   }
 }

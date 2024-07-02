@@ -35,13 +35,13 @@ function ChallengeView() {
 
     return (
         <div>
-            <h1>Hydration Summary</h1>
+            <h1>Water Streak</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Total Water Intake (liters)</th>
-                        <th>Excess Intake (liters)</th>
+                        <th>Exceeded Intake by (liters)</th>
                     </tr>
                 </thead>
                 <tbody>
